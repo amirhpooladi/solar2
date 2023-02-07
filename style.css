@@ -1,0 +1,249 @@
+body {
+    background-color: rgb(246, 201, 53);
+    background-image: url("./2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+    font-family: Vazir;
+
+}
+
+
+#header {
+    font-family: Vazir;
+    text-align: center;
+    margin-top: 40px;
+
+    width: fit-content;
+    margin: auto;
+    border-radius: 50px;
+}
+
+
+
+#text {
+
+
+    border-radius: 50px;
+    position: relative;
+}
+
+#line {
+    width: 80%;
+    margin-top: 40px;
+    height: 2rem;
+    border: dotted 4px;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color: darkred;
+}
+
+#input1 {
+    width: 20%;
+    margin: auto;
+}
+
+#input2 {
+    width: 20%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.all {
+    margin: auto;
+    text-align: center;
+}
+
+#map {
+    width: 500px;
+    margin: 100px;
+}
+
+h3 {
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.alert {
+
+    width: 20%;
+    border-radius: 30%;
+
+}
+
+
+
+#links {
+    margin-right: auto;
+    color: yellowgreen;
+}
+
+
+#error {
+    color: red;
+    opacity: 1;
+    background-color: rgb(237, 243, 245);
+    width: fit-content;
+    margin: auto;
+    border-radius: 10px;
+    height: 2rem;
+
+}
+
+#data1 {
+    color: rgb(6, 32, 40);
+    background-color: rgb(219, 147, 40);
+    width: 20%;
+    margin: auto;
+    margin-top: 50px;
+    border: 2px;
+    border-radius: 5%;
+
+}
+
+#data2 {
+    color: rgb(4, 19, 36);
+    background-color: rgb(219, 147, 40);
+    width: 20%;
+    margin: auto;
+    border-radius: 5%;
+
+}
+
+#data3 {
+    color: rgb(4, 19, 36);
+    background-color: rgb(219, 147, 40);
+    width: 20%;
+    margin: auto;
+    border-radius: 5%;
+
+}
+
+#btn1 {
+    background-color: rgb(12, 7, 56);
+    color: aliceblue;
+}
+
+#btn1:hover {
+    background-color: brown;
+}
+
+#btn1:after {
+    background-color: rgb(236, 13, 13);
+}
+
+#btn1:disabled {
+    background-color: brown;
+
+}
+.card {
+    margin: auto;
+    margin-top: 20px;
+    width: auto;
+    
+}
+
+
+
+#date {
+    margin-left: 30px;
+    margin-top: 20px;
+
+}
+
+#loading {
+    width: 50px;
+    height: 50px;
+
+}
+
+#LL {
+    background-color: rgb(236, 255, 26);
+}
+
+#perID {
+    color: chartreuse;
+    margin-top: 10px;
+}
+
+#PVOUT {
+    background-color: yellow;
+}
+
+#card1 {
+    background-color: rgb(108, 255, 255);
+    color: aqua;
+    background: brown;
+}
+
+
+#cardDisplay {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-grow: 4;
+    flex-wrap: wrap;
+    
+}
+
+#cardBG {
+    background-color: rgb(146, 152, 154);
+}
+
+#btnCard1 {
+    background-color: rgb(12, 7, 56);
+
+}
+
+
+#btnCard2 {
+    background-color: rgb(12, 7, 56);
+
+}
+
+
+#btnCard3 {
+    background-color: rgb(12, 7, 56);
+
+}
+
+
+#btnCard4 {
+    background-color: rgb(12, 7, 56);
+
+}
+
+pre {
+    font-family: Vazir;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Vazir;
+    font-style: normal;
+    font-weight: bold;
+    src: url('fonts/Vazir-Bold.eot');
+    src: url('fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Vazir-Bold.woff2') format('woff2'),
+        url('./fonts/Vazir-Bold.woff2') format('woff2'),
+        url('fonts/Vazir-Bold.woff') format('woff'),
+        url('fonts/Vazir-Bold.ttf') format('truetype');
+}
+#lat{
+    direction: rtl;
+}
+#lon{
+    direction: rtl;
+}
+#cardDisplay{
+    direction: rtl;
+}
+
+
