@@ -44,7 +44,9 @@ body {
 
 #input1 {
     width: 20%;
+    
     margin: auto;
+   
 }
 
 #input2 {
@@ -129,6 +131,7 @@ h3 {
 #btn1 {
     background-color: rgb(12, 7, 56);
     color: aliceblue;
+  
 }
 
 #btn1:hover {
@@ -246,4 +249,94 @@ pre {
     direction: rtl;
 }
 
+#maptext{
+    color: black;
+    border: solid 1px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+#labelLocation{
+    color: black;
+}
+#labelKW{
+    color: black;
+  
+}
+#checkbox1{
+    border: solid 1px;
+    background-color: rgb(120, 233, 118);
+    border-radius: 10px;
+    color: black;
+    width:fit-content ;
+   margin: auto;
+}
+#price{
+    background-color: rgb(218, 233, 99);
+    color: black;
+    width: fit-content;
+    border: solid 1px;
+    border-radius: 10px;
+    padding: 10px;
+}
+#priceInputs{
+    background-color: aliceblue;
+    color: black;
+    width: fit-content;
+    border: solid 1px;
+    border-radius: 10px;
+    margin: auto;
+   
+}
+#priceinputsLabel{
+    background-color: aliceblue;
+    color: black;
+    width: fit-content; 
+}
+#howTocalc{
+    width: fit-content;
+    margin: auto;
+}
+#prc{
+margin: 10px;
+}
+#calculateBaseOn{
+    width: fit-content;
+    margin: auto;
+    
+}
+#typeOfGen{
+    width: fit-content;
+ 
+    margin: auto;
+}
+#textOfGen{
+    background-color: aliceblue;
+    color: black;
+    width: fit-content;
+    border: solid 1px;
+    border-radius: 5px;
+    margin: auto;
+}
+#priceLink{
+    background-color: aliceblue;
+    padding: 10px;
+    border: solid 1px;
+    border-radius: 5px;
+    
+}
+#arak{
+    background-color: aliceblue;
+  padding: 5px;
+    border: solid 1px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 50px;
+}
+#batteryPrice:disabled{
+    background-color: rgb(255, 119, 119);
+}
+#batteryCount:disabled{
+    background-color: rgb(255, 119, 119);
+}
 

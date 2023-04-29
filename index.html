@@ -13,17 +13,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+
+
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    
     <link rel="icon" href="./suni.png">
     <i class="icofont-sun"></i>
     <title>solar panel</title>
    
 </head>
 
-<body>
+<body onload='init();'>
 
 
 
-    
 
 
 
@@ -43,9 +48,16 @@
                 </b>
             </h3>
 
-           
+            
+            
+            <div  id="Map" style="height: 300px ;width:auto;"></div>
+            <h3 id="maptext">
+                مختصات مورد نظر را از روی نقشه انتخاب کنید و یا به صورت دستی وارد کنید
+                  
+              </h3>
                 <div class="input-group mb-3" id="input1">
-
+                    
+                    
                     <input type="number" max="90" min="-90" id="lat" type="text" class="form-control"
                         placeholder="طول جغرافیایی" value="" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
@@ -54,36 +66,139 @@
 
                     <input type="number" max="180" min="-180" id="lon" type="text" class="form-control"
                         placeholder="عرض جغرافیایی" value="" aria-label="Username" aria-describedby="basic-addon1">
+                </div><hr id="line">
+                
+                <div id="typeOfcalc">
+
+                  <h3 id="price">نوع محاسبه</h3>
+                
+                    <div id="howTocalc" class="input-group mb-3">
+                      <select id="howTocalcSelect" class="form-select" id="inputGroupSelect02">
+                        <option selected value="1">میزان تولید مورد نظر</option>
+                        <option   value="2">مکان در دسترس</option>
+                        
+                        
+                      </select>
+                      <label class="input-group-text" for="inputGroupSelect02">محاسبه براساس</label>
+                    </div>
+  
+                    <div id="calculateBaseOn">
+                    <div class="input-group flex-nowrap">
+                      <input id="meterOrKw" type="number" class="form-control" placeholder="کیلو وات" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                  </div>
+                  <br>
+
+
+
+
+                <hr id="line">
+                
+
+
+
+
+                <h3 id="price">نوع نیروگاه</h3>
+                <div id="typeOfGen">
+                  <div class="form-check">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked >
+             <label id="textOfGen" class="form-check-label" for="flexRadioDefault1">
+                متصل به شبکه
+                 </label>
+                      </div>
+                      <div class="form-check">
+                           <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  >
+                         <label id="textOfGen" class="form-check-label" for="flexRadioDefault2">
+                          (نیازمند باتری)منفصل از شبکه
+                          </label>
+                        </div>
+                              </div>
+
+               
+                <hr id="line">
+                <h3 id="price">قیمت ها</h3>
+                <p><a id="priceLink" href="https://www.solarniroo.com/list/" target="_blank" class="link-primary ">لیست قیمت ها</a></p>
+
+                <div id="priceInputs">
+
+
+                  <div id="prc">
+
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping"> قیمت کنونی هر کیلو وات برق</span>
+                        <input id="elecPrice" type="number" class="form-control" placeholder="تومان" aria-label="Username" aria-describedby="addon-wrapping">
+                      </div>
+
+
+
+
+
+                  <div id="prc">
+
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping"> (500 watt)قیمت پنل:</span>
+                        <input id="panelp" type="number" class="form-control" placeholder="تومان" aria-label="Username" aria-describedby="addon-wrapping">
+                      </div>
+                    
+                  </div>
+                  <div  id="prc">
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping" >قیمت اینورتر:</span>
+                        <input id="inverterp" type="number" class="form-control" placeholder="تومان" aria-label="Username" aria-describedby="addon-wrapping">
+                      </div>
+                    
+                  </div>
+
+                <div  id="prc">
+
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">قیمت باتری:</span>
+                        <input id="batteryPrice" type="number" class="form-control" placeholder="تومان" aria-label="Username" aria-describedby="addon-wrapping" disabled value="0">
+                      </div>
+                    
+                  </div>
+
+                  
+                  <div  id="prc">
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">تعداد باتری:</span>
+                        <input id="batteryCount" type="number" class="form-control" placeholder="مثال (4)" aria-label="Username" aria-describedby="addon-wrapping" disabled value="0">
+                      </div>
+                  </div>
+
+                 
+
+                 
                 </div>
+              </div>
 
-                <br>
-
+                <hr id="line">
 
                 <button id="btn1" class="btn btn-warning btn-lg" type="button">
                     محاسبه
                 </button>
+               
 
 
-
-            
+    
+                
 
             <br><br>
             <h4 id="error"></h4>
 
-
+            <h2 id="arak">کلیه اطلاعات محاسبه شده تقریبی بوده و دانشگاه اراک هیچگونه مسولیتی در قبال  آن ندارد</h2>
             <footer id="ray" style="color: rgb(252, 1, 1); text-align: center;" >.</footer>
         </div>
 
         
+        <script src="index2.js"></script>
         
-
-    
-        <script src="index.js"></script>
     <!--    
         <iframe src="https://www.google.com/maps/embed" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 -->
-    
+
+
 </body>
 
 </html>
