@@ -339,4 +339,7 @@ margin: 10px;
 #batteryCount:disabled{
     background-color: rgb(255, 119, 119);
 }
+div#map-canvas {
+  height: 500px !important;
+}
 
